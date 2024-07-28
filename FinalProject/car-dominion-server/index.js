@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/auth');
-const searchRoutes = require('./routes/search');
+const searchRoutes = require('./routes/search'); // Include the new route
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/search', searchRoutes);
+app.use('/api/search', searchRoutes); // Use the new route
 
 // Simple test route to verify server is running
 app.get('/', (req, res) => {
